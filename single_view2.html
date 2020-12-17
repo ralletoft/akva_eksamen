@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single view</title>
+    <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+    <header>
+
+
+        <div id="logo">
+            <a href="index.html"><img src="billeder/logo_small-1-2.png" alt="akva jewellery"></a>
+        </div>
+
+
+        <nav role="navigation">
+            <div id="menuToggle">
+
+                <input type="checkbox" />
+
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+
+                <ul id="menu">
+                    <a href="signature.html">
+                        <li>Signature</li>
+                    </a>
+                    <a href="consilium.html">
+                        <li>Consilium</li>
+                    </a>
+                    <a href="information.html">
+                        <li>Information</li>
+                    </a>
+                    <a href="kurv.html">
+                        <li>Kurv</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+
+
+
+
+
+
+    <main>
+        <article id="single_indhold">
+            <img class="single_billede">
+            <div id="single__indhold">
+                <div class="single_navn"></div>
+                <div class="single_pris"></div>
+                <div class="single_tekst"></div>
+            </div>
+        </article>
+
+
+        <article id="shopknap">
+            <div id="knap">
+                <a href="kurv.html"><button>
+                        <p>LÆG I KURV</p>
+                    </button></a>
+            </div>
+        </article>
+
+
+    </main>
+
+
+
+
+
+
+    <footer>
+        <div id="footer">
+            <div class="col1">
+                <p>AKVA Jewellery ApS</p>
+                <p>Bredgade 36 B 4</p>
+                <p>1260 København K</p>
+            </div>
+            <div class="col2">
+                <p>+45 12 34 56 78</p>
+                <p>info@akvajewellery.com</p>
+                <p>CVR 41736267</p>
+            </div>
+            <div class="col3">
+                <a href="https://www.instagram.com/akvajewellerycph/">Instagram</a>
+                <a href="">Privatlivspolitik</a>
+                <a href="">Handelsbetingelser</a>
+                <a href="">Kontakt os</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="script.js"></script>
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+        let thepage;
+        document.addEventListener("DOMContentLoaded", getThePage);
+
+
+
+        async function getThePage() {
+
+
+            let url = "https://rasmusthinghuustoft.dk/kea/tema_10/akva/wp-json/wp/V2/signature/" + id;
+            let jsonData = await fetch(url);
+            page = await jsonData.json();
+
+
+            console.log(page);
+
+            document.querySelector("#single_indhold .single_tekst").textContent = page.tekst;
+            document.querySelector("#single_indhold .single_navn").textContent = page.title.rendered;
+            document.querySelector("#single indhold, .single_billede").src = page.billede.guid;
+            document.querySelector("#single_indhold .single_pris").textContent = page.pris;
+        };
+
+    </script>
+</body>
+
+</html>

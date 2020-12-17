@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <template id="indhold">
+        <article id="indhold__">
+            <img class="billede">
+            <div id="indhold__txt">
+                <div class="navn"></div>
+                <div class="pris"></div>
+            </div>
+        </article>
+    </template>
+
+
+    <header>
+        <div id="logo">
+            <a href="index.html"><img src="billeder/logo_small-1-2.png" alt="akva jewellery"></a>
+        </div>
+
+
+        <nav role="navigation">
+            <div id="menuToggle">
+
+                <input type="checkbox" />
+
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+
+                <ul id="menu">
+                    <a href="signature.html">
+                        <li>Signature</li>
+                    </a>
+                    <a href="consilium.html">
+                        <li>Consilium</li>
+                    </a>
+                    <a href="information.html">
+                        <li>Information</li>
+                    </a>
+                    <a href="kurv.html">
+                        <li>Kurv</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container"></div>
+    </main>
+
+    <footer>
+        <div id="footer">
+            <div class="col1">
+                <p>AKVA Jewellery ApS</p>
+                <p>Bredgade 36 B 4</p>
+                <p>1260 København K</p>
+            </div>
+            <div class="col2">
+                <p>+45 12 34 56 78</p>
+                <p>info@akvajewellery.com</p>
+                <p>CVR 41736267</p>
+            </div>
+            <div class="col3">
+                <a href="https://www.instagram.com/akvajewellerycph/">Instagram</a>
+                <a href="">Privatlivspolitik</a>
+                <a href="">Handelsbetingelser</a>
+                <a href="">Kontakt os</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script>
+        //nedenfor hentes data fra pods og der fortælles, at det skal sættes ind i template som hedder #indhold
+        hentDynContent();
+        let container = document.querySelector(".container");
+        const temp = document.querySelector("#indhold");
+        let pods;
+        async function hentDynContent() {
+
+            //her fortælles hvilken url inhold skal hentes fra.
+            // per_page=100 sættes på til sidst, så vi er sikre på alle varer kommer på siden, skulle der være over 10.
+            let url = "https://rasmusthinghuustoft.dk/kea/tema_10/akva/wp-json/wp/V2/consilium?per_page=100";
+            let jsonData = await fetch(url);
+            pods = await jsonData.json();
+            console.log(pods);
+
+            visData()
+
+        }
+
+        function visData() {
+            console.log(pods);
+
+            pods.forEach(pod => {
+
+                //for hver pod der hentes ind, sættes dataen ind i disse classes, som ligger i vores template #indhold tag.
+
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector(".navn").textContent = pod.title.rendered;
+                klon.querySelector(".billede").src = pod.billede.guid;
+                klon.querySelector(".pris").textContent = pod.pris;
+
+                klon.querySelector("article").addEventListener("click", function() {
+                    produktklik(pod.id)
+                });
+
+                container.appendChild(klon);
+
+            })
+        };
+
+        function produktklik(id) {
+            console.log("click", id)
+            window.location.href = "single_view.html?id=" + id;
+            // husk at samle url'en op i den nye side
+        }
+    </script>
+</body></html>

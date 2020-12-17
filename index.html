@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKVA Jewellery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+
+
+    <header>
+
+
+        <!--    lav en no show nav menu til web version her  -->
+
+
+        <div id="logo">
+            <a href="index.html"><img src="billeder/logo_small-1-2.png" alt="akva jewellery"></a>
+        </div>
+
+
+        <nav role="navigation">
+            <div id="menuToggle">
+
+                <input type="checkbox" />
+
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+
+                <ul id="menu">
+                    <a href="signature.html">
+                        <li>Signature</li>
+                    </a>
+                    <a href="consilium.html">
+                        <li>Consilium</li>
+                    </a>
+                    <a href="information.html">
+                        <li>Information</li>
+                    </a>
+                    <a href="kurv.html">
+                        <li>Kurv</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+
+
+
+
+    <main>
+
+
+
+
+        <section id="splash_1">
+            <div id="splash_splash">
+
+            </div>
+            <div id="splash_brown">
+                <div class="splash_brown_txt">
+                    <p>Bær et stykke af den usammenlignelige natur med dig.</p>
+                    <a href="consilium.html">
+                        <h2>shop consilium</h2>
+                    </a>
+
+                    <a href="signature.html">
+                        <h2>shop signature</h2>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section>
+            <div id="splash">
+                <div class="splash_billede">
+                    <a href="consilium.html">
+                        <h2>Consilium</h2>
+                    </a>
+                </div>
+            </div>
+            <div id="splash2">
+                <div class="splash_billede2">
+                    <a href="signature.html">
+                        <h2>Signature</h2>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <section id="splash_3">
+            <div id="splash_splash_2">
+
+            </div>
+            <div id="splash_brown_2">
+                <h1>infografik</h1>
+            </div>
+        </section>
+
+
+
+
+
+        <section>
+            <div id="text_content">
+                <p></p>
+            </div>
+            <div id="text_content2">
+                <form>
+                    <h1>tilmeld Nyhedsbrev</h1>
+                    <p>Få opdateringer om nye kollektioner og andet</p>
+                    <div class="info">
+                        <input type="text" placeholder="Navn">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <input type="submit" value="Subscribe">
+                </form>
+            </div>
+        </section>
+
+
+
+    </main>
+
+
+
+
+
+    <footer>
+        <div id="footer">
+            <div class="col1">
+                <p>AKVA Jewellery ApS</p>
+                <p>Bredgade 36 B 4</p>
+                <p>1260 København K</p>
+            </div>
+            <div class="col2">
+                <p>+45 12 34 56 78</p>
+                <p>info@akvajewellery.com</p>
+                <p>CVR 41736267</p>
+            </div>
+            <div class="col3">
+                <a href="https://www.instagram.com/akvajewellerycph/">Instagram</a>
+                <a href="">Privatlivspolitik</a>
+                <a href="">Handelsbetingelser</a>
+                <a href="">Kontakt os</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let page;
+        document.addEventListener("DOMContentLoaded", getThePage);
+
+        async function getThePage() {
+
+            let url = "https://rasmusthinghuustoft.dk/kea/tema_10/akva/wp-json/wp/V2/pages/5";
+            let jsonData = await fetch(url);
+            page = await jsonData.json();
+
+
+            console.log(page);
+
+            document.querySelector("#text_content p").innerHTML = page.content.rendered;
+
+        }
+    </script>
+</body></html>
