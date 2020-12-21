@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 <html>
 
+<!DOCTYPE html>
+<html lang="da">
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="ckeckout" content="width=device-width, initial-scale=1">
+    <meta name="description" content="akva jewellery">
+    <title>Checkout</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
+
+
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             font-size: 17px;
             padding: 8px;
         }
 
-        * {
-            box-sizing: border-box;
+        header {
+            background-color: #fff;
+            align-items: center;
+            height: 100px;
+            z-index: 1;
+            position: fixed;
+            opacity: 97%;
+            width: 100%;
+        }
+
+        #logo {
+            height: 200px;
+            width: 200px;
+            padding: 10px 0;
+            z-index: 4;
+            margin: 0 auto;
         }
 
         .row {
@@ -99,12 +132,18 @@
             border: 1px solid lightgrey;
         }
 
+        h1 {
+            font-family: 'Old Standard TT', serif;
+            font-size: 3em;
+            margin-top: 200px;
+        }
+
         span.price {
             float: right;
             color: grey;
         }
 
-        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+
         @media (max-width: 800px) {
             .row {
                 flex-direction: column-reverse;
@@ -114,13 +153,24 @@
                 margin-bottom: 20px;
             }
         }
+
     </style>
 </head>
 
 <body>
 
+    <header>
+
+
+
+        <div id="logo">
+            <a href="index.html"><img src="billeder/logo_small-1-2.png" alt="akva jewellery"></a>
+        </div>
+
+    </header>
+
     <h1>Checkout</h1>
-    <p>bla bla bla</p>
+    <p></p>
     <div class="row">
         <div class="col-75">
             <div class="container">
@@ -128,14 +178,14 @@
 
                     <div class="row">
                         <div class="col-50">
-                            <h3>Billing Address</h3>
-                            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                            <input type="text" id="fname" name="firstname" placeholder="René Diff">
+                            <h3>Faktureringsadresse</h3>
+                            <label for="fname"><i class="fa fa-user"></i> Fulde Navn</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Rene Diff">
                             <label for="email"><i class="fa fa-envelope"></i> Email</label>
                             <input type="text" id="email" name="email" placeholder="akva@eksempel.dk">
-                            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                            <label for="adr"><i class="fa fa-address-card-o"></i> Adresse</label>
                             <input type="text" id="adr" name="address" placeholder="Københavnsvej 123">
-                            <label for="city"><i class="fa fa-institution"></i> City</label>
+                            <label for="city"><i class="fa fa-institution"></i>By</label>
                             <input type="text" id="city" name="city" placeholder="København K">
 
                             <div class="row">
@@ -143,25 +193,25 @@
 
                                 </div>
                                 <div class="col-50">
-                                    <label for="zip">Zip</label>
+                                    <label for="zip">Postnummer</label>
                                     <input type="text" id="zip" name="zip" placeholder="1234">
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-50">
-                            <h3>Payment</h3>
+                            <h3>Betaling</h3>
 
-                            <label for="cname">Name on Card</label>
-                            <input type="text" id="cname" name="cardname" placeholder="René Diff">
-                            <label for="ccnum">Credit card number</label>
+                            <label for="cname">Navn på kort</label>
+                            <input type="text" id="cname" name="cardname" placeholder="Rene Diff">
+                            <label for="ccnum">Kortnummer</label>
                             <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                            <label for="expmonth">Exp Month</label>
+                            <label for="expmonth">Udløbsmåned</label>
                             <input type="text" id="expmonth" name="expmonth" placeholder="September">
 
                             <div class="row">
                                 <div class="col-50">
-                                    <label for="expyear">Exp Year</label>
+                                    <label for="expyear">Udløbsår</label>
                                     <input type="text" id="expyear" name="expyear" placeholder="2018">
                                 </div>
                                 <div class="col-50">
@@ -173,9 +223,9 @@
 
                     </div>
                     <label>
-                        <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                        <input type="checkbox" checked="checked" name="sameadr"> Leveringsadresse samme som faktureringsadresse
                     </label>
-                    <a href="index.html"><input type="submit" value="Continue to checkout" class="btn"></a>
+                    <a href="index.html"><input type="submit" value="Fotsæt til checkout" class="btn"></a>
                 </form>
             </div>
         </div>
@@ -192,4 +242,6 @@
         </div>
     </div>
 
-</body></html>
+</body>
+
+</html>

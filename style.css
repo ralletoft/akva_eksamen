@@ -7,6 +7,7 @@
 }
 
 
+
 img {
     width: 100%;
 }
@@ -52,12 +53,6 @@ p {
     color: var(--black);
 }
 
-/*
-li {
-    font-family: 'Poppins', sans-serif;
-    color: var(--black);
-}*/
-
 footer a {
     font-family: 'Poppins', sans-serif;
     color: var(--black);
@@ -99,12 +94,15 @@ h3 {
 
 
 header {
-    background-color: var(--beige);
+    background-color: #fff;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100px;
+    z-index: 1;
+    position: fixed;
+    opacity: 97%;
 }
 
 
@@ -115,6 +113,7 @@ header {
     height: 200px;
     width: 200px;
     padding: 10px 0;
+    z-index: 4;
 }
 
 
@@ -145,9 +144,16 @@ header {
 #splash_1 {}
 
 #splash_splash {
-    background-image: url(billeder/0T5A2033-kopier-scaled.jpg);
-    width: 500px;
+    width: 100%;
     height: 600px;
+}
+
+#splash_splash video {
+    width: 375px;
+}
+
+#mobil_video {
+    width: 375px;
 }
 
 #splash_brown {
@@ -159,6 +165,8 @@ header {
 
 .splash_brown_txt p {
     color: white;
+    font-size: 1.5em;
+    font-weight: 700;
     padding: 100px 20px 20px 20px;
 }
 
@@ -167,6 +175,12 @@ header {
     text-decoration: underline;
     text-underline-position: under;
     padding: 100px 20px 20px 20px;
+}
+
+.splash_brown_txt h2:hover {
+    font-size: 140%;
+    transition: .15s ease;
+
 }
 
 
@@ -180,18 +194,24 @@ header {
 #splash_3 {}
 
 #splash_splash_2 {
-    background-image: url(billeder/0T5A2033-kopier-scaled.jpg);
-    width: 500px;
+    background-image: url(billeder/LACTUCA-BANGLEWS.png);
+    width: 100%;
     height: 600px;
+    background-position: center;
+    padding-left: 15px;
+    padding-top: 499px;
 }
 
 #splash_brown_2 {
-    background-color: var(--beige);
+    background-position: center;
+    background-color: #ebebeb;
     height: 600px;
 }
 
 
-
+.infografik {
+    padding-top: 200px;
+}
 
 
 
@@ -204,7 +224,7 @@ header {
 
 .splash_billede {
     background-image: url(billeder/0T5A2033-kopier-scaled.jpg);
-    width: 500px;
+    width: 100%;
     height: 600px;
     background-position: center;
     padding-left: 15px;
@@ -224,6 +244,21 @@ header {
 }
 
 
+.splash_billede h2:hover {
+    font-size: 140%;
+    transition: .15s ease;
+}
+
+.splash_billede2 h2:hover {
+    font-size: 140%;
+    transition: .15s ease;
+
+}
+
+
+
+
+
 
 
 
@@ -233,8 +268,8 @@ header {
 }
 
 .splash_billede2 {
-    background-image: url(billeder/akva_front.jpg);
-    width: 500px;
+    background-image: url(billeder/IMG_6348.JPG);
+    width: 100%;
     height: 600px;
     background-position: center;
     padding-left: 15px;
@@ -246,11 +281,15 @@ header {
 
 
 
+
+
+
+
 #text_content {
-    background-color: var(--light-blue);
+    background-color: #fff;
     height: 600px;
     font-size: 0.9em;
-    padding: 20px;
+    padding: 50px 20px 50px 20px;
 }
 
 #text_content p {
@@ -261,7 +300,7 @@ header {
 #text_content2 {
     background-color: var(--light-brown);
     height: 500px;
-    padding: 20px;
+    padding: 0px;
 }
 
 
@@ -298,7 +337,7 @@ header {
 form h1 {
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 25.5px;
     letter-spacing: 1px;
     margin: 0;
     padding: 0;
@@ -313,14 +352,14 @@ form p {
 }
 
 form {
-    width: 428px;
-    margin: 50px auto;
-    padding: 50px;
+    width: 375px;
+    padding: 150px 50px 50px 50px;
+    margin: 0 auto;
 }
 
 input {
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .info {
@@ -330,7 +369,7 @@ input {
 
 .info input {
     display: block;
-    width: 315px;
+    width: 275px;
     height: 20px;
     border: 0;
     border-radius: 3px;
@@ -350,7 +389,7 @@ input {
 
 input[type="submit"] {
     vertical-align: top;
-    width: 315px;
+    width: 275px;
     height: 40px;
     margin: 10px 0 0 0;
     padding: 0;
@@ -367,6 +406,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: #6b5a46;
     color: #EBE5DF;
+    transition: color 0.3s ease;
 }
 
 
@@ -420,6 +460,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: left;
+    margin-bottom: 8px;
 }
 
 
@@ -625,6 +666,16 @@ footer {
     right: 50px;
 }
 
+.container {
+    padding-top: 110px;
+}
+
+#h1_hide {
+    display: none;
+}
+
+
+
 
 
 
@@ -653,11 +704,13 @@ footer {
 #single__indhold {
     background-color: #b8b3ae;
     color: #fff;
-    height: 350px;
+    height: auto;
     width: 300px;
     font-family: 'Poppins', sans-serif;
     padding: 20px;
+    margin: 0px auto;
 }
+
 
 
 #single_indhold {
@@ -665,7 +718,8 @@ footer {
 }
 
 #single_indhold img {
-    margin: 50px auto 20px auto;
+    margin: 50px 0 20px -60px;
+    width: 300px;
 }
 
 .single_navn {
@@ -682,7 +736,7 @@ footer {
 
 button {
     background-color: var(--dark-brown);
-    width: 250px;
+    width: 300px;
     height: 40px;
     margin: -60px auto 0px;
     display: flex;
@@ -700,6 +754,7 @@ button p {
 
 button:hover {
     background-color: #6b5a20;
+    transition: color 0.3s ease;
 }
 
 
@@ -741,11 +796,14 @@ button:hover {
     background-color: #b8b3ae;
 }
 
-#designerne {}
+#designerne {
+    padding-top: 100px;
+}
 
 #designerne h1 {
     color: #fff;
     padding: 10px 10px;
+    font-size: 2em;
 }
 
 #information2 {
@@ -829,10 +887,776 @@ button:hover {
 
 /*********Media Q*********/
 
-@media only screen and (min-width: 769px) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********Media Q burger menu iphone x *********/
+
+
+
+@media only screen and (max-width: 767px) {
+    #web_menu {
+        display: none;
+    }
+}
+
+#menuToggle {
+    display: block;
+    position: relative;
+    top: -60px;
+    left: -150px;
+
+    z-index: 1;
+
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menu {
+    position: absolute;
+    width: 300px;
+    margin: 34px 0 0 -28px;
+    padding: 50px;
+    /*    padding-top: 125px;*/
+
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+
+
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+
+#single__indhold {
+    margin: 0px -60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********Mobil Q*********/
+
+@media only screen and (max-width: 768px) {
+    #web_menu {
+        display: none;
+    }
+
+    #web_video {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********Web Q*********/
+
+@media only screen and (min-width: 768px) {
+
     /*
-display: grid;
-    grid-gap: 15px;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    padding: 0 15px 75px 15px;*/
+        {
+            display: grid;
+            grid-gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            padding: 0 15px 75px 15px;
+        }
+*/
+
+    #menuToggle {
+        display: none;
+    }
+
+
+    #logo {
+        position: absolute;
+        padding-top: 15px;
+    }
+
+
+    #web_menu a {
+        font-family: 'Old Standard TT', serif;
+        padding: 20px 10px;
+        font-size: 28px;
+        text-decoration: none;
+        color: var(--black);
+        transition: color 0.3s ease;
+    }
+
+    #web_menu a:hover {
+        color: var(--dark-brown);
+    }
+
+    #web_menu {
+        display: flex;
+        flex-direction: row;
+        z-index: 200;
+        justify-content: space-around;
+    }
+
+
+    .web_menu_venstre {
+        position: relative;
+        top: 35px;
+        left: -30vw;
+    }
+
+    .web_menu_hojre {
+        position: relative;
+        top: 35px;
+        right: -30vw;
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    #footer {
+        display: flex;
+        flex-direction: row;
+        padding: 50px 50px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .col1 {}
+
+    .col2 {
+        padding-right: 400px;
+    }
+
+    .col3 {}
+
+
+
+
+    #section_nyhedsbrev {
+        height: 600px;
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        padding: 50px 150px 30px 150px;
+    }
+
+    #splash_3 {
+        height: 600px;
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        padding: 50px 150px 30px 150px;
+        margin-bottom: 50px;
+    }
+
+    #CTA {
+        height: 600px;
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        padding: 50px 150px 30px 150px;
+        margin-bottom: 50px;
+    }
+
+    #CTA img {
+        width: 50%;
+    }
+
+    #splash_1 {
+        height: 600px;
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        padding: 50px 150px 30px 150px;
+        margin-bottom: 50px;
+    }
+
+    #splash_1 img {
+        width: 50%;
+    }
+
+    main {
+        margin-top: 100px;
+    }
+
+    header {
+        margin-top: -100px;
+    }
+
+    #splash_splash video {
+        position: relative;
+        z-index: -1;
+        width: auto;
+        height: 600px;
+    }
+
+    #mobil_video {
+        display: none;
+    }
+
+    #splash_brown_2 {
+        background-position: center;
+        background-color: #ebebeb;
+    }
+
+    .infografik {
+        width: 100%;
+        height: auto;
+        padding-top: 110px;
+    }
+
+
+
+
+    /************ Signature + Consilium ****************/
+
+
+    .container {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    }
+
+
+
+    .navn,
+    .pris {
+        font-family: 'Poppins', sans-serif;
+        color: var(--black);
+        width: 200px;
+        position: inherit;
+    }
+
+
+    .pris {
+        padding-left: 135px;
+    }
+
+
+    /************ information ****************/
+
+
+    #designerne {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        padding: 50px 150px 30px 150px;
+        margin-bottom: 50px;
+    }
+
+    #designerne img {
+        width: 60%;
+    }
+
+    #designerne h1 {
+        padding-top: 170px;
+    }
+
+    #bagakva {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        padding: 50px 150px 30px 150px;
+        margin-bottom: 50px;
+    }
+
+    #bagakva img {
+        width: 60%;
+    }
+
+    #hvorfor {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        padding: 50px 150px 80px 150px;
+    }
+
+    #hvorfor h1 {}
+
+    #hvorfor img {
+        width: 60%;
+    }
+
+    #hvordan {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        padding: 50px 150px 150px 150px;
+    }
+
+    #hvordan h1 {
+        color: #fff;
+        padding: 10px;
+        font-size: 3em;
+    }
+
+    #hvordan img {
+        width: 60%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /************ Single view ****************/
+
+    #single_indhold {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        padding: 150px 250px 150px 300px;
+    }
+
+    #single_indhold img {
+        width: auto;
+        height: 500px;
+    }
+
+    #shopknap {
+        margin: 50px auto;
+    }
+
+    #single__indhold {
+        height: 500px;
+        margin-top: 50px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********      Web +1530px     *********/
+
+/*********      Web +1530px     *********/
+
+/*********      Web +1530px     *********/
+
+/*********      Web +1530px     *********/
+
+/*********      Web +1530px     *********/
+
+/*********      Web +1530px     *********/
+
+/*********      Web +1530px     *********/
+
+@media only screen and (min-width: 1530px) {
+
+    /*
+        {
+            display: grid;
+            grid-gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            padding: 0 15px 75px 15px;
+        }
+*/
+
+    #menuToggle {
+        display: none;
+    }
+
+
+    #logo {
+        position: absolute;
+        padding-top: 15px;
+    }
+
+
+    #web_menu a {
+        font-family: 'Old Standard TT', serif;
+        padding: 20px 10px;
+        font-size: 28px;
+        text-decoration: none;
+        color: var(--black);
+        transition: color 0.3s ease;
+    }
+
+    #web_menu a:hover {
+        color: var(--dark-brown);
+    }
+
+    #web_menu {
+        display: flex;
+        flex-direction: row;
+        z-index: 200;
+        justify-content: space-around;
+    }
+
+
+    .web_menu_venstre {
+        position: relative;
+        top: 35px;
+        left: -30vw;
+    }
+
+    .web_menu_hojre {
+        position: relative;
+        top: 35px;
+        right: -30vw;
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    #footer {
+        display: flex;
+        flex-direction: row;
+        padding: 50px 50px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .col1 {}
+
+    .col2 {
+        padding-right: 400px;
+    }
+
+    .col3 {}
+
+
+
+
+    #section_nyhedsbrev {
+        height: 600px;
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+        padding: 50px 150px 30px 150px;
+    }
+
+    #splash_3 {
+        height: 600px;
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+        padding: 50px 150px 30px 150px;
+        margin-bottom: 50px;
+    }
+
+    #CTA {
+        height: 600px;
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+        padding: 50px 150px 30px 150px;
+        margin-bottom: 50px;
+    }
+
+    #CTA img {
+        width: 50%;
+    }
+
+    #splash_1 {
+        height: 600px;
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+        padding: 50px 150px 30px 150px;
+        margin-bottom: 50px;
+    }
+
+    #splash_1 img {
+        width: 50%;
+    }
+
+    main {
+        margin-top: 100px;
+    }
+
+    header {
+        margin-top: -100px;
+    }
+
+    #splash_splash video {
+        position: relative;
+        z-index: -1;
+        width: auto;
+        height: 600px;
+        padding: 0 10px 0 40px;
+    }
+
+    #mobil_video {
+        display: none;
+    }
+
+    #splash_brown_2 {
+        background-position: center;
+        background-color: #ebebeb;
+    }
+
+    .infografik {
+        width: 100%;
+        height: auto;
+        padding-top: 110px;
+    }
+
+
+
+
+    /************ Signature + Consilium ****************/
+
+
+    .container {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    }
+
+
+
+    .navn,
+    .pris {
+        font-family: 'Poppins', sans-serif;
+        color: var(--black);
+        width: 200px;
+        position: inherit;
+    }
+
+
+    .pris {
+        padding-left: 135px;
+    }
+
+
+    /************ information ****************/
+
+
+    #designerne {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
+        padding: 50px 150px 30px 150px;
+        margin-bottom: 50px;
+    }
+
+    #designerne img {
+        width: 60%;
+    }
+
+    #designerne h1 {
+        padding-top: 170px;
+    }
+
+    #bagakva {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
+        padding: 50px 150px 30px 150px;
+        margin-bottom: 50px;
+    }
+
+    #bagakva img {
+        width: 60%;
+    }
+
+    #hvorfor {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
+        padding: 50px 150px 80px 150px;
+    }
+
+    #hvorfor h1 {}
+
+    #hvorfor img {
+        width: 60%;
+    }
+
+    #hvordan {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
+        padding: 50px 150px 150px 150px;
+    }
+
+    #hvordan h1 {
+        color: #fff;
+        padding: 10px;
+        font-size: 3em;
+    }
+
+    #hvordan img {
+        width: 60%;
+    }
+
+    /************ Single view ****************/
+
+    #single_indhold {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        padding: 150px 250px 150px 300px;
+    }
+
+    #single_indhold img {
+        width: auto;
+        height: 500px;
+    }
+
+    #shopknap {
+        margin: 50px auto;
+    }
+
+    #single__indhold {
+        height: 500px;
+        margin-top: 50px;
+    }
+
+
 }
